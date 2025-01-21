@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>View Account</title>
+</head>
+<body>
+    <header>
+        <h1>View Account</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="account_number">Account Number:</label>
+            <input type="text" name="account_number" required>
+            <button type="submit">View Account</button>
+        </form>
+
+        {% if account_details %}
+            <h2>Account Details:</h2>
+            <ul>
+                <li>Account Number: {{ account_details["Account Number"] }}</li>
+                <li>Name: {{ account_details["Name"] }}</li>
+                <li>Balance (INR): {{ account_details["Balance (INR)"] }}</li>
+            </ul>
+            <h3>Transactions:</h3>
+            <ul>
+                {% for transaction in account_details["Transactions"] %}
+                    <li>{{ transaction }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </main>
+</body>
+</html>

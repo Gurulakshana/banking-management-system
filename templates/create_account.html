@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Create Account</title>
+</head>
+<body>
+    <header>
+        <h1>Create Account</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="account_number">Account Number:</label>
+            <input type="text" name="account_number" required>
+            <label for="name">Account Holder Name:</label>
+            <input type="text" name="name" required>
+            <label for="initial_deposit">Initial Deposit (INR):</label>
+            <input type="number" name="initial_deposit" step="0.01" required>
+            <button type="submit">Create Account</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </main>
+</body>
+</html>

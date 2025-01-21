@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Apply for Loan</title>
+</head>
+<body>
+    <header>
+        <h1>Apply for Loan</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="account_number">Account Number:</label>
+            <input type="text" name="account_number" required>
+            <label for="loan_amount">Loan Amount (INR):</label>
+            <input type="number" name="loan_amount" step="0.01" required>
+            <label for="interest_rate">Interest Rate (%):</label>
+            <input type="number" name="interest_rate" step="0.01" required>
+            <label for="loan_term">Loan Term (Months):</label>
+            <input type="number" name="loan_term" required>
+            <button type="submit">Apply for Loan</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </main>
+</body>
+</html>

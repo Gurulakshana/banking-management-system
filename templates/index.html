@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Banking System</title>
+</head>
+<body>
+    <header>
+        <h1 id="top">Welcome to the Banking System</h1>
+        <nav>
+            <a href="{{ url_for('create_account') }}">Create Account</a>
+            <a href="{{ url_for('deposit') }}">Deposit</a>
+            <a href="{{ url_for('withdraw') }}">Withdraw</a>
+            <a href="{{ url_for('apply_for_loan') }}">Apply for Loan</a>
+            <a href="{{ url_for('repay_loan') }}">Repay Loan</a>
+            <a href="{{ url_for('search_transactions') }}">Search Transactions</a>
+            <a href="{{ url_for('view_account') }}">View Account</a>
+        </nav>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul id='m'>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <h2 id='s'>Select an option from the menu above</h2>
+    </main>
+</body>
+</html>

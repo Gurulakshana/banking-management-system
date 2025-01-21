@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Repay Loan</title>
+</head>
+<body>
+    <header>
+        <h1>Repay Loan</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="account_number">Account Number:</label>
+            <input type="text" name="account_number" required>
+            <label for="loan_id">Loan ID:</label>
+            <input type="number" name="loan_id" required>
+            <label for="payment">Payment Amount (INR):</label>
+            <input type="number" name="payment" step="0.01" required>
+            <button type="submit">Repay Loan</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </main>
+</body>
+</html>

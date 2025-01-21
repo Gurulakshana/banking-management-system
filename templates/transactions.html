@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Search Transactions</title>
+</head>
+<body>
+    <header>
+        <h1>Search Transactions</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="account_number">Account Number:</label>
+            <input type="text" name="account_number" required>
+            <label for="keyword">Keyword:</label>
+            <input type="text" name="keyword" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <h2>Transactions:</h2>
+        <ul>
+            {% for transaction in transactions %}
+                <li>{{ transaction }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </main>
+</body>
+</html>

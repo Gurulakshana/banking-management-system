@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Deposit Money</title>
+</head>
+<body>
+    <header>
+        <h1>Deposit Money</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="account_number">Account Number:</label>
+            <input type="text" name="account_number" required>
+            <label for="amount">Amount to Deposit (INR):</label>
+            <input type="number" name="amount" step="0.01" required>
+            <button type="submit">Deposit</button>
+        </form>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </main>
+</body>
+</html>
